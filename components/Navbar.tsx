@@ -18,7 +18,7 @@ const Navbar = () => {
         <AppBar position="static">
             <Toolbar>
                 <Typography variant="h6" fontWeight="bold" sx={{flexGrow: 1}}>
-                    NS
+                    <Link href="/">NS</Link>
                 </Typography>
                 <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer} sx={{display: {xs: 'block', md: 'none'}}}>
                     <MenuIcon/>

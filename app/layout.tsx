@@ -1,7 +1,9 @@
 'use client'
 import { ReactNode } from 'react';
-import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
+import { createTheme, ThemeProvider, CssBaseline, Box } from "@mui/material";
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import './globals.css';
 
 const theme = createTheme({
   palette: {
@@ -21,8 +23,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Navbar/>
-          <main>{children}</main>
+          <Box display="flex" flexDirection="column" minHeight="100vh">
+            <Navbar/>
+            <Box component="main" flexGrow={1}>{children}</Box>
+            <Footer/>
+          </Box>
         </ThemeProvider>
       </body>
     </html>
