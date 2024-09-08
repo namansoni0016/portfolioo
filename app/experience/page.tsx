@@ -7,7 +7,8 @@ const Experience = () => {
             <Typography variant="h2" fontWeight="bold" gutterBottom>
                 Experience
             </Typography>
-            <Card sx={{ width: '100%', maxWidth: 800, borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', mt: 3, padding: 2,}}>
+            <Card sx={{ width: '100%', maxWidth: 1000, borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                '&:hover': { transform: 'translateY(-5px)', boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)'}, mt: 3, padding: 2,}}>
                 <CardContent>
                     <Typography variant="h5" gutterBottom>
                         Product Manager - <Image src="/icici-logo.png" alt="ICICI Bank Logo" width={30} height={30} /> ICICI Bank (June 2023 - Dec 2023)
