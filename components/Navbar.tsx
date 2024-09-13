@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography, IconButton, Button, Drawer, List, ListItem, ListItemText, Box } from "@mui/material";
+import { AppBar, Toolbar, Typography, Box, Link as MuiLink, IconButton, Drawer, List, ListItem, ListItemText, } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import Link from "next/link";
@@ -16,8 +16,8 @@ const Navbar = () => {
     ]
     return (
         <AppBar position="static">
-            <Toolbar>
-                <Typography variant="h6" fontWeight="bold" sx={{flexGrow: 1}}>
+            <Toolbar sx={{ justifyContent: 'space-between' }}>
+                <Typography variant="h4" fontWeight="bold" component="div">
                     <Link href="/">NS</Link>
                 </Typography>
                 <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer} sx={{display: {xs: 'block', md: 'none'}}}>
@@ -27,17 +27,26 @@ const Navbar = () => {
                     <List>
                         {navItems.map((item, index) => (
                             <ListItem key={index} component={Link} href={item.link} onClick={toggleDrawer} sx={{ textDecoration: 'none' }}>
-                                <ListItemText sx={{color: 'white', textDecoration: 'none', '&:hover': { color: 'primary.main' }}} primary={item.text} />
+                                <ListItemText sx={{color: 'white', textDecoration: 'none', '&:hover': { color: '#1e88e5' }}} primary={item.text} />
                             </ListItem>
                         ))}
                     </List>
                 </Drawer>
                 <Box sx={{ display: { xs: 'none', md: 'block'}}}>
-                    {navItems.map((item, index) => (
-                        <Button key={index} color="inherit" component={Link} href={item.link} sx={{ textDecoration: 'none', color: 'white', '&:hover': { color: 'primary.main' } }}>
-                            {item.text}
-                        </Button>
-                    ))}
+                <Box sx={{ display: "flex", gap: 3 }}>
+                    <Link href="/about" passHref>
+                        <MuiLink underline="none" color="inherit" sx={{'&:hover': {color: '#1e88e5'}}}>About</MuiLink>
+                    </Link>
+                    <Link href="/experience" passHref>
+                        <MuiLink underline="none" color="inherit" sx={{'&:hover': {color: '#1e88e5'}}}>Experience</MuiLink>
+                    </Link>
+                    <Link href="/projects" passHref>
+                        <MuiLink underline="none" color="inherit" sx={{'&:hover': {color: '#1e88e5'}}}>Projects</MuiLink>
+                    </Link>
+                    <Link href="/contact" passHref>
+                        <MuiLink underline="none" color="inherit" sx={{'&:hover': {color: '#1e88e5'}}}>Contact Me</MuiLink>
+                    </Link>
+                </Box>
                 </Box>
             </Toolbar>
         </AppBar>
