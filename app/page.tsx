@@ -18,7 +18,7 @@ export default function Home() {
         <Typography variant="h6" color="textSecondary" paragraph>
           I'm a Full-Stack Developer with the knowledge of creating modern web applications with innovative solutions.
         </Typography>
-        <Button variant="contained" color="inherit" href="/resume.pdf" download sx={{borderRadius: '50px', paddingX: 4, paddingY: 1}}>
+        <Button variant="contained" color="inherit" href="/resume.pdf" download>
           Download Resume
         </Button>
       </Box>

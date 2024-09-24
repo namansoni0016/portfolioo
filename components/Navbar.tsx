@@ -34,18 +34,13 @@ const Navbar = () => {
                 </Drawer>
                 <Box sx={{ display: { xs: 'none', md: 'block'}}}>
                 <Box sx={{ display: "flex", gap: 3 }}>
-                    <Link href="/about" passHref>
-                        <MuiLink underline="none" color="inherit" sx={{'&:hover': {color: '#1e88e5'}}}>About</MuiLink>
-                    </Link>
-                    <Link href="/experience" passHref>
-                        <MuiLink underline="none" color="inherit" sx={{'&:hover': {color: '#1e88e5'}}}>Experience</MuiLink>
-                    </Link>
-                    <Link href="/projects" passHref>
-                        <MuiLink underline="none" color="inherit" sx={{'&:hover': {color: '#1e88e5'}}}>Projects</MuiLink>
-                    </Link>
-                    <Link href="/contact" passHref>
-                        <MuiLink underline="none" color="inherit" sx={{'&:hover': {color: '#1e88e5'}}}>Contact Me</MuiLink>
-                    </Link>
+                    {navItems.map((item, index) => (
+                        <Link href={item.link} passHref key={index} legacyBehavior>
+                            <MuiLink underline="none" color="inherit" sx={{ '&:hover': { color: '#1e88e5' }, cursor: 'pointer' }} aria-label={item.text}>
+                                {item.text}
+                            </MuiLink>
+                        </Link>
+                    ))}
                 </Box>
                 </Box>
             </Toolbar>
